@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>空格分开</title>
+</head>
+<body>
+<ul>
+    <li class="aa bb cc" id="li1">11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<script>
+    var oLi = document.getElementById('li1');
+    console.log(oLi.className);
+    var string = oLi.className.split(" ");
+    console.log(string);
+    console.log(oLi.id);
+</script>
+</body>
+</html>

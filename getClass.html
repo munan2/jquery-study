@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getClass</title>
+</head>
+<body>
+<ul id="bb">
+    <li class="aa">11</li>
+    <li>22</li>
+    <li class="aa">33</li>
+    <li>44</li>
+</ul>
+<script>
+    var oB = document.getElementById('bb');
+    function getClass(clsName){
+        if(document.getElementsByClassName){
+            return document.getElementsByClassName(clsName);
+        }
+        var arr = [];
+        var dom = document.getElementsByTagName("*");
+        for(var i=0;i<dom.length;i++){
+            if(dom[i].className==clsName){
+                arr.push(dom[i]);
+            }
+        }
+        return arr;
+    }
+    for(var i=0;i<getClass("aa").length;i++){
+        getClass("aa")[i].style.backgroundColor = "#f00";
+    }
+</script>
+</body>
+</html>

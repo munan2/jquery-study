@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq常见函数封装</title>
+    <style>
+        .bg{
+            background: #0f0;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">click me</button>
+<ul id="ul1">
+    <li class="bg aa" id="ss">11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<script src="myjq.js"></script>
+<script>
+    $(function(){
+        // $("#btn").addClass('bg').height(50);
+        // console.log($("#btn").height());
+        // $("#btn").on('click',function(){
+        //     alert(111);
+        // });
+        $("#ul1").on('click','.aa',function(){
+            alert(this.innerHTML);
+        });
+        $('li').on('click',function(){
+            alert(1);
+        },1);
+        $('.aa').addClass('bg');
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getStyle</title>
+    <style>
+        #div1{
+            width: 500px;
+            height: 500px;
+            background: #f00;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">haha</div>
+<script>
+    var oDiv1 = document.getElementById('div1');
+    // console.log(oDiv1.currentStyle.width);//IE
+    // console.log(getComputedStyle(oDiv1,false).width);
+    function getStyle(elem,prop){
+        if(elem.currentStyle){//ie
+            return elem.currentStyle[prop];
+        }else if(window.getComputedStyle){//标准浏览器
+            return getComputedStyle(elem,false)[prop];
+        }else{
+            return elem.style[prop]//内联样式
+        }
+    }
+    console.log(getStyle(oDiv1,'width'));
+</script>
+</body>
+</html>
