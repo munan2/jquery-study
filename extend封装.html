@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extend封装</title>
+</head>
+<body>
+    <script>
+        var obj1={
+            name:"zhangyan",
+            sex:"female"
+        }
+        var obj2={
+            name:"dailili",
+            age:24
+        }
+        function extend(obj1,obj2){
+            for(var p in obj2){
+                obj1[p] = obj2[p]
+            }
+            return obj1;
+        }
+        console.log(extend(obj1,obj2));
+    </script>
+</body>
+</html>
